@@ -5,6 +5,7 @@ from graia.application import GraiaMiraiApplication
 from graia.application.message.elements.internal import Plain, At, Quote
 from graia.application.event.messages import GroupMessage
 from graia.application.message.chain import MessageChain
+from graia.application.group import Group
 import requests
 import json
 
@@ -16,7 +17,7 @@ channel = Channel.current()
 @channel.use(ListenerSchema(
 	listening_events=[GroupMessage]
 ))
-async def nbnhhsh(message: MessageChain, app: GraiaMiraiApplication):
+async def nbnhhsh(message: MessageChain, app: GraiaMiraiApplication, group: Group):
     try: 
         text = message.get(Plain)[0].asDisplay()
     except IndexError:
