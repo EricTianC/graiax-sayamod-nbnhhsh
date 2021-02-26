@@ -1,16 +1,15 @@
 [tool.poetry]
 name = "graiax-sayamod-nbnhhsh"
-version = "0.1.1"
+version = "0.1.2"
 description = "[Saya模块]能不能好好说话——缩写查询"
 authors = ["Eric <erictianc@outlook.com>"]
 license = "AGPL 3.0"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-requests = "^2.25.1"
 graia-application-mirai = "^0.16.1"
-graia-broadcast = "^0.7.0"
 graia-saya = "^0.0.4"
+aiosonic = "^0.9.5"
 
 [tool.poetry.dev-dependencies]
 

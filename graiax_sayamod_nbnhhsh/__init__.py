@@ -6,7 +6,7 @@ from graia.application.message.elements.internal import Plain, At, Quote
 from graia.application.event.messages import GroupMessage
 from graia.application.message.chain import MessageChain
 from graia.application.group import Group
-import requests
+import aiosonic
 import json
 
 
@@ -31,10 +31,11 @@ async def nbnhhsh(message: MessageChain, app: GraiaMiraiApplication, group: Grou
         
         
 async def guess(text: str) -> str:
-    resp = requests.post('https://lab.magiconch.com/api/nbnhhsh/guess',data={'text':str(text)})
+    client = aiosonic.HttpClient()
+    resp = await client.post('https://lab.magiconch.com/api/nbnhhsh/guess',data={'text':str(text)})
     tran = ""
     try:
-        trans = json.loads(resp.text)[0]['trans']
+        trans = json.loads(await response.content())[0]['trans']
     except KeyError as e:
         print('可能暂时没有这个缩写！')
         print(e)
