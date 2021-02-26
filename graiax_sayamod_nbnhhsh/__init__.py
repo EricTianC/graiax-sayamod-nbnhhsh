@@ -31,7 +31,7 @@ async def nbnhhsh(message: MessageChain, app: GraiaMiraiApplication, group: Grou
         
         
 async def guess(text: str) -> str:
-    client = aiosonic.HttpClient()
+    client = aiosonic.HTTPClient()
     resp = await client.post('https://lab.magiconch.com/api/nbnhhsh/guess',data={'text':str(text)})
     tran = ""
     try:
@@ -39,6 +39,7 @@ async def guess(text: str) -> str:
     except KeyError as e:
         print('可能暂时没有这个缩写！')
         print(e)
+    client.shutdown()
     for i in trans:
         if len(trans) == 1:
             tran = i
