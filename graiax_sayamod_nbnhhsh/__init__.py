@@ -35,7 +35,7 @@ async def guess(text: str) -> str:
     resp = await client.post('https://lab.magiconch.com/api/nbnhhsh/guess',data={'text':str(text)})
     tran = ""
     try:
-        trans = json.loads(await response.content())[0]['trans']
+        trans = json.loads(await resp.content())[0]['trans']
     except KeyError as e:
         print('可能暂时没有这个缩写！')
         print(e)
