@@ -39,7 +39,7 @@ async def guess(text: str) -> str:
     except KeyError as e:
         print('可能暂时没有这个缩写！')
         print(e)
-    client.shutdown()
+    await client.shutdown()
     for i in trans:
         if len(trans) == 1:
             tran = i
