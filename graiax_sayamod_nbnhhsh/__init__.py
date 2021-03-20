@@ -31,7 +31,7 @@ async def nbnhhsh(message: MessageChain, app: GraiaMiraiApplication, group: Grou
         
         
 async def guess(text: str) -> str:
-    client = aiosonic.HttpClient()
+    client = aiosonic.HTTPClient()
     resp = await client.post('https://lab.magiconch.com/api/nbnhhsh/guess',data={'text':str(text)}，headers={'c
     tran = ""
     try:
